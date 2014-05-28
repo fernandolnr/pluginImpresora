@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.laneveraroja.printer"
+      version="0.1.0">
+
+    <name>printer</name>
+
+    <description>Sample PhoneGap printer Plugin</description>
+    <license>laneveraroja.com</license>
+    <keywords>phonegap,printer</keywords>
+
+     <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+ 
+    <js-module src="www/printer.js" name="Printer">
+        <clobbers target="phonegap.printer" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Printer">
+                <param name="android-package" value="org.laneveraroja.printer.Printer"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/Printer.java" target-dir="src/org/laneveraroja/printer" />      
+     </platform>          
+</plugin>
